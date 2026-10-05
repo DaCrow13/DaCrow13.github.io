@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Lorenzo Abatescianni | University of Bari Aldo Moro</title>
+  
+  <meta name="description" content="Personal academic webpage of Lorenzo Abatescianni, Ph.D. Student in Computer Science and Mathematics at the Computational Intelligence Laboratory (CILAB), University of Bari Aldo Moro.">
+  <meta name="keywords" content="Lorenzo Abatescianni, CILAB, PhD, Neuro-Symbolic AI, Knowledge Graphs, Computer Vision, Deep Learning, University of Bari, Railway Diagnostics">
+  <meta name="author" content="Lorenzo Abatescianni">
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="profile">
+  <meta property="og:site_name" content="Lorenzo Abatescianni">
+  <meta property="og:title" content="Lorenzo Abatescianni | University of Bari Aldo Moro">
+  <meta property="og:description" content="Ph.D. Student in Computer Science and Mathematics at the Computational Intelligence Laboratory (CILAB), University of Bari Aldo Moro.">
+  <meta property="og:image" content="./assets/img/lorenzo_abatescianni.png">
+
+  <!-- Favicon (PNG & SVG with cache-buster) -->
+  <link id="site-favicon" rel="icon" href="./assets/img/favicon.png?v=2" type="image/png">
+  <link rel="alternate icon" href="./assets/img/favicon.svg" type="image/svg+xml">
+
+  <!-- Instant Theme Apply (Prevents white flash on dark theme) -->
+  <script>
+    (function () {
+      try {
+        var savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+          document.documentElement.style.colorScheme = 'dark';
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Google Fonts: Plus Jakarta Sans, Inter, & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Academicons & FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/publications.css">
+</head>
+<body>
+
+  <div class="wrapper">
+    <!-- ======================================================================
+         Sidebar / Header (Modern Academic Card)
+         ====================================================================== -->
+    <header class="sidebar">
+      <div class="avatar-container">
+        <img class="avatar" src="./assets/img/lorenzo_abatescianni.png?v=3" alt="Portrait of Lorenzo Abatescianni">
+      </div>
+
+      <h1 class="name">Lorenzo Abatescianni</h1>
+
+      <div class="position">Ph.D. Student in Computer Science &amp; Mathematics</div>
+      
+      <div class="lab">
+        <a href="http://cilab.di.uniba.it" target="_blank" rel="noopener">
+          Computational Intelligence Laboratory (CILAB)
+        </a>
+      </div>
+
+      <div class="affiliation">
+        <a href="https://www.uniba.it/" target="_blank" rel="noopener">
+          University of Bari Aldo Moro
+        </a>
+      </div>
+      
+      <div class="email-wrapper">
+        <a class="email" href="mailto:l.abatescianni@phd.uniba.it" title="Send email to Lorenzo">
+          <i class="fa-regular fa-envelope"></i>
+          <span>l.abatescianni@phd.uniba.it</span>
+        </a>
+      </div>
+
+      <!-- Social Links & Theme Switcher -->
+      <div class="social-icons">
+        <!-- GitHub -->
+        <a href="https://github.com/DaCrow13" target="_blank" rel="noopener" title="GitHub (@DaCrow13)" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/lorenzo-abatescianni-912995317" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+
+        <!-- Light / Dark Mode Toggle Button -->
+        <button type="button" class="theme-toggle" aria-pressed="false" title="Toggle theme" aria-label="Toggle theme">
+          <i class="fas fa-moon theme-toggle__moon" aria-hidden="true"></i>
+          <i class="fas fa-sun theme-toggle__sun" aria-hidden="true"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- ======================================================================
+         Main Content Section
+         ====================================================================== -->
+    <main class="content">
+
+      <!-- About Me -->
+      <section class="intro" id="about-me">
+        <h2>About Me</h2>
+        
+        <p>
+          I am a 1st-year Ph.D. student in Computer Science and Mathematics at the 
+          <a href="https://www.uniba.it/" target="_blank" rel="noopener">University of Bari Aldo Moro</a>, 
+          conducting research at the 
+          <a href="http://cilab.di.uniba.it" target="_blank" rel="noopener">Computational Intelligence Laboratory (CILAB)</a> 
+          within the Department of Computer Science, under the supervision of 
+          <strong>Prof. Giovanna Castellano</strong>, <strong>Prof. Gennaro Vessio</strong>, and <strong>Dott. Pasquale De Marinis</strong>.
+        </p>
+
+        <p>
+          My doctoral research project focuses on <strong>"Knowledge-Driven Neuro-Symbolic AI for Data Integration and Diagnostics in Railway Systems"</strong>. 
+          The goal is to bridge the semantic gap between formal engineering domain knowledge (such as XML/CAD layouts, ERTMS/ETCS signaling logic, and OWL/SHACL ontologies) 
+          and data-driven AI (sensor telemetry streams, predictive maintenance) through <strong>Graph Neural Networks (GNNs)</strong>, 
+          <strong>Temporal Graph Transformers</strong>, and <strong>World Models</strong>.
+        </p>
+
+        <p>
+          I completed both my academic degrees at the University of Bari Aldo Moro:
+        </p>
+        <ul class="degree-highlights">
+          <li>
+            <strong>Master's Degree (M.Sc.) in Computer Science</strong> (curriculum in <em>Artificial Intelligence</em>), conferred in September 2026. 
+            Thesis investigated self-supervised Vision Transformers (DINOv3) and multimodal deep learning for flower phenotyping.
+          </li>
+          <li>
+            <strong>Bachelor's Degree (B.Sc.) in Informatica e Tecnologie per la Produzione del Software (ITPS)</strong>, conferred in July 2024, 
+            focusing on multidimensional tensor factorization (Tucker decomposition) for hyperspectral change detection.
+          </li>
+        </ul>
+      </section>
+
+      <!-- Research Interests -->
+      <section id="research-interests">
+        <h2>Research Interests</h2>
+        <ul class="research-list">
+          <li><strong>Neuro-Symbolic AI & Knowledge Graphs:</strong> Integrating formal domain ontologies (OWL, SHACL, RailML) with deep latent representations for constraint-compliant reasoning.</li>
+          <li><strong>Graph Neural Networks & Relational Learning:</strong> GNNs, Temporal Graph Transformers, and topology-aware relational learning over heterogeneous sensor streams.</li>
+          <li><strong>Computer Vision & Multimodal Learning:</strong> Visual phenotyping, representation learning (DINO, ViTs, ResNet), contour segmentation, and multimodal sensor fusion.</li>
+          <li><strong>Industrial Diagnostics & Trustworthy AI:</strong> Predictive maintenance, explainable diagnostics (XAI), safety-critical verification, and railway intelligence (ERTMS/ETCS).</li>
+        </ul>
+
+        <div class="interest-tags">
+          <span class="interest-tag">Neuro-Symbolic AI</span>
+          <span class="interest-tag">Knowledge Graphs</span>
+          <span class="interest-tag">Graph Neural Networks</span>
+          <span class="interest-tag">Computer Vision</span>
+          <span class="interest-tag">Deep Learning</span>
+          <span class="interest-tag">Explainable AI (XAI)</span>
+          <span class="interest-tag">Predictive Maintenance</span>
+          <span class="interest-tag">Railway Systems</span>
+        </div>
+      </section>
+
+      <!-- News Timeline -->
+      <section id="news">
+        <h2>News</h2>
+        <div class="news-list" data-news-limit="4">
+          <div class="news-item">
+            <span class="news-date">Oct 2026</span>
+            <div class="news-text">
+              Started my Ph.D. in Computer Science and Mathematics on <strong>October 1st, 2026</strong> at the University of Bari Aldo Moro (CILAB) under the supervision of Prof. G. Castellano, Prof. G. Vessio, and Dott. P. De Marinis, working on <em>"Knowledge-Driven Neuro-Symbolic AI for Data Integration and Diagnostics in Railway Systems"</em>!
+            </div>
+          </div>
+
+          <div class="news-item">
+            <span class="news-date">Sep 2026</span>
+            <div class="news-text">
+              Successfully defended my Master's Thesis <em>"Computer Vision Techniques for Flower Phenotyping"</em> in Computer Science (Artificial Intelligence) in <strong>September 2026</strong>.
+            </div>
+          </div>
+
+          <div class="news-item">
+            <span class="news-date">Jul 2024</span>
+            <div class="news-text">
+              Graduated with a Bachelor's Degree in <em>Informatica e Tecnologie per la Produzione del Software (ITPS)</em> from the University of Bari in <strong>July 2024</strong>, defending a thesis on tensor Tucker decomposition.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Research Projects & Theses -->
+      <section id="research-projects">
+        <h2>Research & Projects</h2>
+        
+        <div class="publications">
+          <ol class="bibliography">
+
+            <!-- 1. PhD Research Project -->
+            <li>
+              <div class="pub-row">
+                <div class="pub-thumb">
+                  <img class="teaser" src="./assets/img/phd_railway.png" alt="Architecture Diagram of PhD Railway Neuro-Symbolic AI">
+                  <span class="badge">Ph.D. Project (2026 – 2029)</span>
+                </div>
+                <div class="pub-details">
+                  <div class="pub-title">
+                    <a href="#">
+                      Knowledge-Driven Neuro-Symbolic AI for Data Integration and Diagnostics in Railway Systems
+                    </a>
+                  </div>
+                  <div class="pub-authors">
+                    <strong>Lorenzo Abatescianni</strong> (Tutors: Prof. Giovanna Castellano, Prof. Gennaro Vessio, Dott. Pasquale De Marinis)
+                  </div>
+                  <div class="pub-venue">
+                    <em>Ph.D. Program in Computer Science and Mathematics, Computational Intelligence Lab (CILAB), University of Bari Aldo Moro (Started Oct 1, 2026).</em>
+                  </div>
+                  
+                  <div class="pub-links">
+                    <a class="btn btn--project" href="http://cilab.di.uniba.it" target="_blank" rel="noopener">
+                      <i class="fas fa-flask"></i> CILAB Lab
+                    </a>
+                    <button class="btn btn--bibtex" data-bibtex-target="bibtex-phd">
+                      <i class="fas fa-quote-right"></i> BibTeX
+                    </button>
+                  </div>
+
+                  <div class="pub-abstract">
+                    This doctoral research develops a neuro-symbolic framework to bridge the gap between static formal railway knowledge (XML/CAD schemas, ERTMS/ETCS signaling constraints, RailML ontologies) and live sensor telemetry. By embedding formal validation rules directly into Graph Neural Networks and Temporal Graph Transformers, the system achieves interpretable predictive maintenance, automated safety verification, and explainable operator diagnostics.
+                  </div>
+
+                  <!-- Collapsible BibTeX -->
+                  <div class="pub-bibtex-block" id="bibtex-phd">
+                    <button class="pub-copy-bib" title="Copy BibTeX to clipboard">Copy</button>
+                    <pre>@article{abatescianni2026railway,
+  title={Knowledge-Driven Neuro-Symbolic AI for Data Integration and Diagnostics in Railway Systems},
+  author={Abatescianni, Lorenzo},
+  journal={Ph.D. Research Project, Computational Intelligence Laboratory (CILAB), University of Bari Aldo Moro},
+  year={2026}
+}</pre>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- 2. Master's Thesis Feature -->
+            <li>
+              <div class="pub-row">
+                <div class="pub-thumb">
+                  <img class="teaser" src="./assets/img/flower_phenotyping.png?v=4" alt="Master's Thesis Architecture: DINOv3 Vision Transformer & Multimodal Fusion for Flower Phenotyping">
+                  <span class="badge">M.Sc. Thesis · Sep 2026</span>
+                </div>
+                <div class="pub-details">
+                  <div class="pub-title">
+                    <a href="#">
+                      Computer Vision Techniques for Flower Phenotyping
+                    </a>
+                  </div>
+                  <div class="pub-authors">
+                    <strong>Lorenzo Abatescianni</strong> (Supervisors: Prof. Gennaro Vessio, Dott. Pasquale De Marinis)
+                  </div>
+                  <div class="pub-venue">
+                    <em>M.Sc. Thesis in Computer Science (Artificial Intelligence), University of Bari Aldo Moro, September 2026.</em>
+                  </div>
+                  
+                  <div class="pub-links">
+                    <a class="btn btn--project" href="http://cilab.di.uniba.it" target="_blank" rel="noopener">
+                      <i class="fas fa-flask"></i> CILAB Lab
+                    </a>
+                    <button class="btn btn--bibtex" data-bibtex-target="bibtex-msc">
+                      <i class="fas fa-quote-right"></i> BibTeX
+                    </button>
+                  </div>
+
+                  <div class="pub-abstract">
+                    Introduces a non-destructive, pre-sowing automated computer vision system to predict seedling flower traits directly from resting seeds. Combines RGB visual streams (HSV segmentation, Suzuki-Abe contour tracing, canonical orientation) with spectral data, evaluated using supervised ResNet50 and self-supervised DINOv3 backbones followed by PCA dimensionality reduction and MLP multimodal classification.
+                  </div>
+
+                  <!-- Collapsible BibTeX -->
+                  <div class="pub-bibtex-block" id="bibtex-msc">
+                    <button class="pub-copy-bib" title="Copy BibTeX to clipboard">Copy</button>
+                    <pre>@mastersthesis{abatescianni2026flower,
+  title={Computer Vision Techniques for Flower Phenotyping},
+  author={Abatescianni, Lorenzo},
+  school={University of Bari Aldo Moro},
+  year={2026},
+  month={September}
+}</pre>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- 3. Bachelor's Thesis Feature -->
+            <li>
+              <div class="pub-row">
+                <div class="pub-thumb">
+                  <img class="teaser" src="./assets/img/tucker_tensor.png" alt="Bachelor's Thesis Diagram: Tucker Decomposition for Change Detection">
+                  <span class="badge">B.Sc. Thesis · Jul 2024</span>
+                </div>
+                <div class="pub-details">
+                  <div class="pub-title">
+                    <a href="#">
+                      Un algoritmo di change-detection basato sulla decomposizione di Tucker
+                    </a>
+                  </div>
+                  <div class="pub-authors">
+                    <strong>Lorenzo Abatescianni</strong> (Supervisor: Prof.ssa Antonella Falini)
+                  </div>
+                  <div class="pub-venue">
+                    <em>B.Sc. Thesis in Informatica e Tecnologie per la Produzione del Software (ITPS), University of Bari Aldo Moro, July 2024.</em>
+                  </div>
+                  
+                  <div class="pub-links">
+                    <button class="btn btn--bibtex" data-bibtex-target="bibtex-bsc">
+                      <i class="fas fa-quote-right"></i> BibTeX
+                    </button>
+                  </div>
+
+                  <div class="pub-abstract">
+                    Presents an efficient change-detection framework for multidimensional hyperspectral image cuboids using Tucker tensor decomposition. By factorizing the 3D tensor into a compact core tensor and factor matrices along the spatial and spectral modes, the algorithm effectively reduces noise and high dimensionality while capturing critical temporal variations across multitemporal remote-sensing scenes.
+                  </div>
+
+                  <!-- Collapsible BibTeX -->
+                  <div class="pub-bibtex-block" id="bibtex-bsc">
+                    <button class="pub-copy-bib" title="Copy BibTeX to clipboard">Copy</button>
+                    <pre>@thesis{abatescianni2024tucker,
+  title={Un algoritmo di change-detection basato sulla decomposizione di Tucker},
+  author={Abatescianni, Lorenzo},
+  school={University of Bari Aldo Moro},
+  year={2024},
+  month={July}
+}</pre>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+          </ol>
+        </div>
+
+        <!-- Note about upcoming publications -->
+        <div class="empty-notice">
+          <i class="fas fa-info-circle" style="margin-right: 6px; color: var(--theme-color);"></i>
+          <strong>Publications Notice:</strong> Having just started my Ph.D. in October 2026, my research work at CILAB on railway diagnostics and neuro-symbolic AI is ongoing. Upcoming conference submissions, journal articles, and preprints will be listed here as soon as they become available.
+        </div>
+      </section>
+
+      <!-- Education Section -->
+      <section id="education">
+        <h2>Education</h2>
+
+        <!-- PhD -->
+        <div class="edu-item">
+          <div class="edu-period">2026 – 2029</div>
+          <div>
+            <div class="edu-degree">Ph.D. in Computer Science and Mathematics (1° Anno)</div>
+            <div class="edu-inst">University of Bari Aldo Moro – Computational Intelligence Laboratory (CILAB)</div>
+            <div class="edu-detail">
+              <strong>Started:</strong> October 1st, 2026<br>
+              <strong>Research Topic:</strong> <em>Knowledge-Driven Neuro-Symbolic AI for Data Integration and Diagnostics in Railway Systems</em><br>
+              <strong>Tutors:</strong> Prof. Giovanna Castellano, Prof. Gennaro Vessio, Dott. Pasquale De Marinis
+            </div>
+          </div>
+        </div>
+
+        <!-- Master -->
+        <div class="edu-item">
+          <div class="edu-period">2024 – 2026</div>
+          <div>
+            <div class="edu-degree">Master's Degree (M.Sc.) in Computer Science</div>
+            <div class="edu-inst">University of Bari Aldo Moro</div>
+            <div class="edu-detail">
+              <strong>Curriculum:</strong> Artificial Intelligence (AI)<br>
+              <strong>Conferred:</strong> September 2026<br>
+              <strong>Thesis:</strong> <em>Computer Vision Techniques for Flower Phenotyping</em><br>
+              <strong>Supervisors:</strong> Prof. Gennaro Vessio, Dott. Pasquale De Marinis
+            </div>
+          </div>
+        </div>
+
+        <!-- Bachelor -->
+        <div class="edu-item">
+          <div class="edu-period">2021 – 2024</div>
+          <div>
+            <div class="edu-degree">Bachelor's Degree (B.Sc.) in Informatica e Tecnologie per la Produzione del Software (ITPS)</div>
+            <div class="edu-inst">University of Bari Aldo Moro</div>
+            <div class="edu-detail">
+              <strong>Conferred:</strong> July 2024<br>
+              <strong>Thesis:</strong> <em>Un algoritmo di change-detection basato sulla decomposizione di Tucker</em><br>
+              <strong>Supervisor:</strong> Prof.ssa Antonella Falini
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Academic Affiliations -->
+      <section id="activities">
+        <h2>Affiliations &amp; Research Community</h2>
+        <ul class="research-list">
+          <li><strong>Research Laboratory:</strong> Member of the <a href="http://cilab.di.uniba.it" target="_blank" rel="noopener">Computational Intelligence Laboratory (CILAB)</a> at the Department of Computer Science, University of Bari Aldo Moro.</li>
+          <li><strong>Research Focus:</strong> Neuro-Symbolic AI, Knowledge Graphs, and Graph Neural Networks for industrial diagnostics and safety-critical transportation systems.</li>
+          <li><strong>Open Science:</strong> Promoting open-source AI tooling, modular ontologies, and reproducibility in machine learning research.</li>
+        </ul>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-content">
+        <p class="footer-copy">
+          &copy; 2026 Lorenzo Abatescianni &middot; Computational Intelligence Laboratory (CILAB)
+        </p>
+        <p class="footer-sub">
+          Department of Computer Science &middot; University of Bari Aldo Moro &middot; Bari, Italy
+        </p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="./assets/js/theme.js"></script>
+  <script src="./assets/js/news.js"></script>
+  <script src="./assets/js/pubs-carousel.js"></script>
+  <script src="./assets/js/main.js"></script>
+</body>
+</html>

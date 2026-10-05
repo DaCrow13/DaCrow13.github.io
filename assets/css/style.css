@@ -1,0 +1,654 @@
+/* ==========================================================================
+   Academic Portfolio Stylesheet
+   Lorenzo Abatescianni — Ph.D. Student @ CILAB, University of Bari Aldo Moro
+   ========================================================================== */
+
+:root {
+  /* Fonts */
+  --font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Color Palette — Light Mode (Clean Academic Navy & Slate) */
+  --bg-color: #ffffff;
+  --bg-subtle: #f8fafc;
+  --card-bg: #ffffff;
+  --card-border: #e2e8f0;
+  --card-border-hover: #cbd5e1;
+
+  --text-color: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+
+  --theme-color: #1e40af;
+  --theme-color-hover: #1d4ed8;
+  --theme-color-light: rgba(30, 64, 175, 0.08);
+
+  --accent-color: #1d4ed8;
+  --accent-hover: #1e40af;
+
+  --tag-bg: #f1f5f9;
+  --tag-text: #334155;
+  --tag-border: #e2e8f0;
+
+  --code-bg: #f8fafc;
+  --code-text: #0f172a;
+
+  /* Shadows */
+  --shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-sm: 0 2px 6px -1px rgba(15, 23, 42, 0.06), 0 1px 4px -1px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 6px 16px -2px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 12px 28px -4px rgba(15, 23, 42, 0.1);
+}
+
+[data-theme="dark"] {
+  /* Color Palette — Dark Mode (Distinguished Academic Dark) */
+  --bg-color: #0d1117;
+  --bg-subtle: #161b22;
+  --card-bg: #161b22;
+  --card-border: #30363d;
+  --card-border-hover: #484f58;
+
+  --text-color: #e6edf3;
+  --text-secondary: #8b949e;
+  --text-muted: #7d8590;
+
+  --theme-color: #58a6ff;
+  --theme-color-hover: #79c0ff;
+  --theme-color-light: rgba(88, 166, 255, 0.12);
+
+  --accent-color: #58a6ff;
+  --accent-hover: #79c0ff;
+
+  --tag-bg: #21262d;
+  --tag-text: #c9d1d9;
+  --tag-border: #30363d;
+
+  --code-bg: #161b22;
+  --code-text: #e6edf3;
+
+  /* Shadows in Dark */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 6px 18px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 12px 28px rgba(0, 0, 0, 0.55);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-body);
+  font-size: 0.96rem;
+  line-height: 1.65;
+  margin: 0;
+  padding: 44px 24px;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--text-color);
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 16px 0;
+  transition: color 0.25s ease;
+}
+
+h1 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
+h2 {
+  font-size: 1.32rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--theme-color);
+  margin-top: 2.2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 8px;
+  border-bottom: 1.5px solid var(--card-border);
+}
+
+h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 1.02rem;
+  font-weight: 600;
+}
+
+p, ul, ol {
+  margin: 0 0 1.2rem 0;
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+strong {
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+/* ==========================================================================
+   Page Layout (Grid on Desktop, Stack on Mobile)
+   ========================================================================== */
+
+.wrapper {
+  max-width: 1060px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 290px 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+/* ==========================================================================
+   Sidebar (Clean Academic Profile Card)
+   ========================================================================== */
+
+header.sidebar {
+  position: sticky;
+  top: 36px;
+  text-align: center;
+  padding: 30px 20px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+header.sidebar:hover {
+  border-color: var(--card-border-hover);
+}
+
+.avatar-container {
+  margin-bottom: 1.25rem;
+}
+
+.avatar {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--card-border);
+  box-shadow: var(--shadow-xs);
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.avatar:hover {
+  transform: scale(1.02);
+  border-color: var(--theme-color);
+}
+
+.sidebar h1.name {
+  font-family: var(--font-heading);
+  font-size: 1.55rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.35rem;
+  color: var(--text-color);
+}
+
+.sidebar .position {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--theme-color);
+  margin-bottom: 0.7rem;
+  line-height: 1.4;
+}
+
+.sidebar .lab {
+  font-size: 0.88rem;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+}
+
+.sidebar .lab a {
+  color: var(--text-secondary);
+}
+
+.sidebar .lab a:hover {
+  color: var(--theme-color);
+}
+
+.sidebar .affiliation {
+  font-size: 0.85rem;
+  margin-bottom: 0.65rem;
+}
+
+.sidebar .affiliation a {
+  color: var(--text-muted);
+}
+
+.sidebar .affiliation a:hover {
+  color: var(--theme-color);
+}
+
+.email-wrapper {
+  margin: 0.8rem 0 1.25rem 0;
+}
+
+.sidebar .email {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 6px 14px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--card-border);
+  border-radius: 999px;
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+}
+
+.sidebar .email:hover {
+  background: var(--theme-color-light);
+  border-color: var(--theme-color);
+  color: var(--theme-color);
+  text-decoration: none;
+}
+
+/* Social Icons & Theme Toggle */
+.social-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.social-icons a,
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  color: var(--text-secondary) !important;
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--card-border);
+  font-size: 1.15rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.social-icons a:hover,
+.theme-toggle:hover {
+  background-color: var(--theme-color);
+  color: #ffffff !important;
+  border-color: var(--theme-color);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-xs);
+}
+
+/* Theme Toggle Button Icons */
+.theme-toggle .theme-toggle__moon {
+  display: inline-block;
+}
+
+.theme-toggle .theme-toggle__sun {
+  display: none;
+}
+
+[data-theme="dark"] .theme-toggle .theme-toggle__moon {
+  display: none;
+}
+
+[data-theme="dark"] .theme-toggle .theme-toggle__sun {
+  display: inline-block;
+}
+
+/* ==========================================================================
+   Main Content Area
+   ========================================================================== */
+
+main.content {
+  min-width: 0;
+}
+
+.intro p {
+  font-size: 0.97rem;
+  line-height: 1.7;
+  margin-bottom: 1.15rem;
+  color: var(--text-secondary);
+}
+
+.intro p strong {
+  color: var(--text-color);
+}
+
+/* Degree Highlights list in About Me */
+.degree-highlights {
+  padding-left: 22px;
+  margin: 0.8rem 0 1.2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.degree-highlights li {
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* Research Interests List */
+.research-list {
+  padding-left: 22px;
+  margin: 0 0 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.research-list li {
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.research-list li strong {
+  color: var(--text-color);
+}
+
+/* Topic tags */
+.interest-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.interest-tag {
+  background-color: var(--tag-bg);
+  color: var(--tag-text);
+  border: 1px solid var(--tag-border);
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 999px;
+  transition: all 0.2s ease;
+  cursor: default;
+}
+
+.interest-tag:hover {
+  background-color: var(--theme-color-light);
+  color: var(--theme-color);
+  border-color: var(--theme-color);
+}
+
+/* ==========================================================================
+   News Timeline
+   ========================================================================== */
+
+.news-list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-left: 24px;
+  margin: 1.2rem 0 1.5rem 0;
+}
+
+.news-list::before {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: var(--card-border);
+  border-radius: 2px;
+}
+
+.news-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 95px 1fr;
+  gap: 16px;
+  padding: 2px 0;
+  align-items: start;
+}
+
+.news-item::before {
+  content: '';
+  position: absolute;
+  left: -24px;
+  top: 7px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--card-bg);
+  border: 2px solid var(--theme-color);
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.news-item:first-child::before {
+  background-color: var(--theme-color);
+}
+
+.news-date {
+  font-family: var(--font-mono);
+  background-color: var(--bg-subtle);
+  color: var(--theme-color);
+  border: 1px solid var(--card-border);
+  font-size: 0.74rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 6px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.news-text {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.news-text strong {
+  color: var(--text-color);
+}
+
+.news-item[hidden] {
+  display: none;
+}
+
+.news-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 4px 0 1.5rem 0;
+  padding: 5px 16px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--card-border);
+  border-radius: 999px;
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.news-toggle:hover {
+  background-color: var(--theme-color);
+  color: #ffffff;
+  border-color: var(--theme-color);
+}
+
+/* Empty notice */
+.empty-notice {
+  padding: 14px 18px;
+  background-color: var(--bg-subtle);
+  border: 1px dashed var(--card-border);
+  border-radius: 10px;
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  line-height: 1.55;
+  margin: 1.5rem 0;
+}
+
+/* ==========================================================================
+   Education & Experience
+   ========================================================================== */
+
+.edu-item {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 18px;
+  margin-bottom: 1.2rem;
+  padding: 16px 18px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-xs);
+  transition: border-color 0.2s ease;
+}
+
+.edu-item:hover {
+  border-color: var(--card-border-hover);
+}
+
+.edu-period {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--theme-color);
+  background: var(--theme-color-light);
+  padding: 4px 8px;
+  border-radius: 6px;
+  text-align: center;
+  align-self: start;
+}
+
+.edu-degree {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-color);
+  line-height: 1.35;
+}
+
+.edu-inst {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-top: 3px;
+}
+
+.edu-detail {
+  font-size: 0.86rem;
+  margin-top: 6px;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+footer.site-footer {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 32px 20px 10px 20px;
+  margin-top: 40px;
+  border-top: 1px solid var(--card-border);
+}
+
+.footer-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.footer-copy {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.footer-sub {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+
+@media screen and (max-width: 960px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  header.sidebar {
+    position: static;
+    padding: 24px 18px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  body {
+    padding: 20px 14px;
+  }
+
+  .avatar {
+    width: 140px;
+    height: 140px;
+  }
+
+  .news-item {
+    grid-template-columns: 75px 1fr;
+    gap: 12px;
+  }
+
+  .news-date {
+    font-size: 0.7rem;
+    padding: 2px 6px;
+  }
+
+  .edu-item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 14px 14px;
+  }
+
+  .edu-period {
+    align-self: start;
+    display: inline-block;
+  }
+}
