@@ -1,7 +1,3 @@
-/**
- * News List Collapser (Progressive Enhancement)
- * Reads data-news-limit and collapses list to top entries with a Show More toggle.
- */
 (function () {
   'use strict';
 

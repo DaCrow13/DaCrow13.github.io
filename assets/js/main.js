@@ -1,12 +1,7 @@
-/**
- * Main Interactive Features
- * Handles BibTeX snippet toggling and clipboard copying.
- */
 (function () {
   'use strict';
 
   function initBibtex() {
-    // BibTeX toggle buttons
     document.querySelectorAll('[data-bibtex-target]').forEach(function (button) {
       button.addEventListener('click', function (e) {
         e.preventDefault();
@@ -18,7 +13,6 @@
       });
     });
 
-    // Copy BibTeX buttons
     document.querySelectorAll('.pub-copy-bib').forEach(function (button) {
       button.addEventListener('click', function () {
         var pre = button.parentElement.querySelector('pre');

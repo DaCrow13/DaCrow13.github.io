@@ -1,7 +1,3 @@
-/**
- * Light / Dark Theme Controller
- * Supports localStorage persistence and system color preference fallback.
- */
 (function () {
   'use strict';
 
@@ -21,7 +17,6 @@
       root.style.colorScheme = 'light';
     }
 
-    // Update favicon
     var favicon = document.getElementById('site-favicon');
     if (favicon) {
       favicon.href = theme === 'dark' ? './assets/img/favicon-dark.svg' : './assets/img/favicon.svg';
@@ -30,9 +25,7 @@
     if (persist) {
       try {
         localStorage.setItem(STORAGE_KEY, theme);
-      } catch (e) {
-        /* LocalStorage unavailable */
-      }
+      } catch (e) {}
     }
 
     var toggleBtn = document.querySelector('.theme-toggle');
@@ -48,7 +41,6 @@
     var toggleBtn = document.querySelector('.theme-toggle');
     if (!toggleBtn) return;
 
-    // Apply currently active theme
     applyTheme(currentTheme(), false);
 
     toggleBtn.addEventListener('click', function () {

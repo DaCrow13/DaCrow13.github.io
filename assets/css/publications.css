@@ -1,8 +1,3 @@
-/* ==========================================================================
-   Publications & Projects Stylesheet
-   Featured projects, theses, high-res diagrams, and BibTeX accordions
-   ========================================================================== */
-
 .publications {
   margin-top: 1.2rem;
 }
@@ -21,7 +16,6 @@ ol.bibliography > li {
   padding: 0;
 }
 
-/* Publication / Project Card Row */
 .pub-row {
   display: grid;
   grid-template-columns: 220px 1fr;
@@ -39,7 +33,6 @@ ol.bibliography > li {
   border-color: var(--card-border-hover);
 }
 
-/* Teaser / Thumbnail Column */
 .pub-thumb {
   position: relative;
   display: block;
@@ -58,7 +51,6 @@ ol.bibliography > li {
   padding: 6px;
 }
 
-/* Venue / Thesis Badge on Top of Teaser */
 .pub-thumb .badge {
   position: absolute;
   top: 6px;
@@ -81,7 +73,6 @@ ol.bibliography > li {
   border: 1px solid var(--card-border);
 }
 
-/* Publication Details */
 .pub-details {
   display: flex;
   flex-direction: column;
@@ -126,7 +117,6 @@ ol.bibliography > li {
   font-style: italic;
 }
 
-/* Action Links / Buttons */
 .pub-links {
   display: flex;
   flex-wrap: wrap;
@@ -159,7 +149,6 @@ ol.bibliography > li {
   border-color: var(--theme-color);
 }
 
-/* Abstract Callout */
 .pub-abstract {
   font-size: 0.86rem;
   line-height: 1.55;
@@ -171,7 +160,6 @@ ol.bibliography > li {
   margin-top: 6px;
 }
 
-/* Collapsible BibTeX */
 .pub-bibtex-block {
   display: none;
   margin-top: 10px;
@@ -216,7 +204,6 @@ ol.bibliography > li {
   border-color: var(--theme-color);
 }
 
-/* Responsive Breakpoints */
 @media screen and (max-width: 780px) {
   .pub-row {
     grid-template-columns: 1fr;

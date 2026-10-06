@@ -1,15 +1,8 @@
-/* ==========================================================================
-   Academic Portfolio Stylesheet
-   Lorenzo Abatescianni — Ph.D. Student @ CILAB, University of Bari Aldo Moro
-   ========================================================================== */
-
 :root {
-  /* Fonts */
   --font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
-  /* Color Palette — Light Mode (Clean Academic Navy & Slate) */
   --bg-color: #ffffff;
   --bg-subtle: #f8fafc;
   --card-bg: #ffffff;
@@ -34,7 +27,6 @@
   --code-bg: #f8fafc;
   --code-text: #0f172a;
 
-  /* Shadows */
   --shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.04);
   --shadow-sm: 0 2px 6px -1px rgba(15, 23, 42, 0.06), 0 1px 4px -1px rgba(15, 23, 42, 0.04);
   --shadow-md: 0 6px 16px -2px rgba(15, 23, 42, 0.08);
@@ -42,7 +34,6 @@
 }
 
 [data-theme="dark"] {
-  /* Color Palette — Dark Mode (Distinguished Academic Dark) */
   --bg-color: #0d1117;
   --bg-subtle: #161b22;
   --card-bg: #161b22;
@@ -67,7 +58,6 @@
   --code-bg: #161b22;
   --code-text: #e6edf3;
 
-  /* Shadows in Dark */
   --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.4);
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
   --shadow-md: 0 6px 18px rgba(0, 0, 0, 0.45);
@@ -96,7 +86,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Typography */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   color: var(--text-color);
@@ -154,10 +143,7 @@ strong {
   color: var(--text-color);
 }
 
-/* ==========================================================================
-   Page Layout (Grid on Desktop, Stack on Mobile)
-   ========================================================================== */
-
+/* Layout */
 .wrapper {
   max-width: 1060px;
   margin: 0 auto;
@@ -167,10 +153,7 @@ strong {
   align-items: start;
 }
 
-/* ==========================================================================
-   Sidebar (Clean Academic Profile Card)
-   ========================================================================== */
-
+/* Sidebar */
 header.sidebar {
   position: sticky;
   top: 36px;
@@ -278,7 +261,6 @@ header.sidebar:hover {
   text-decoration: none;
 }
 
-/* Social Icons & Theme Toggle */
 .social-icons {
   display: flex;
   flex-wrap: wrap;
@@ -314,7 +296,6 @@ header.sidebar:hover {
   box-shadow: var(--shadow-xs);
 }
 
-/* Theme Toggle Button Icons */
 .theme-toggle .theme-toggle__moon {
   display: inline-block;
 }
@@ -331,10 +312,7 @@ header.sidebar:hover {
   display: inline-block;
 }
 
-/* ==========================================================================
-   Main Content Area
-   ========================================================================== */
-
+/* Content */
 main.content {
   min-width: 0;
 }
@@ -350,7 +328,6 @@ main.content {
   color: var(--text-color);
 }
 
-/* Degree Highlights list in About Me */
 .degree-highlights {
   padding-left: 22px;
   margin: 0.8rem 0 1.2rem 0;
@@ -364,7 +341,6 @@ main.content {
   color: var(--text-secondary);
 }
 
-/* Research Interests List */
 .research-list {
   padding-left: 22px;
   margin: 0 0 1.5rem 0;
@@ -382,7 +358,6 @@ main.content {
   color: var(--text-color);
 }
 
-/* Topic tags */
 .interest-tags {
   display: flex;
   flex-wrap: wrap;
@@ -408,10 +383,7 @@ main.content {
   border-color: var(--theme-color);
 }
 
-/* ==========================================================================
-   News Timeline
-   ========================================================================== */
-
+/* News */
 .news-list {
   position: relative;
   display: flex;
@@ -509,7 +481,6 @@ main.content {
   border-color: var(--theme-color);
 }
 
-/* Empty notice */
 .empty-notice {
   padding: 14px 18px;
   background-color: var(--bg-subtle);
@@ -521,10 +492,7 @@ main.content {
   margin: 1.5rem 0;
 }
 
-/* ==========================================================================
-   Education & Experience
-   ========================================================================== */
-
+/* Education */
 .edu-item {
   display: grid;
   grid-template-columns: 120px 1fr;
@@ -575,10 +543,7 @@ main.content {
   line-height: 1.55;
 }
 
-/* ==========================================================================
-   Footer
-   ========================================================================== */
-
+/* Footer */
 footer.site-footer {
   grid-column: 1 / -1;
   text-align: center;
@@ -605,10 +570,7 @@ footer.site-footer {
   margin-bottom: 0;
 }
 
-/* ==========================================================================
-   Responsive Breakpoints
-   ========================================================================== */
-
+/* Responsive */
 @media screen and (max-width: 960px) {
   .wrapper {
     grid-template-columns: 1fr;
